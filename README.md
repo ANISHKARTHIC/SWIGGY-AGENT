@@ -115,3 +115,58 @@ The agent will use MCP tools to execute real-world actions.
 ---
 
 ## 📂 Project Structure
+
+swiggy-smart-agent/
+│── backend/
+│ ├── agent/
+│ ├── api/
+│ ├── models/
+│ └── utils/
+│
+│── frontend/
+│ ├── components/
+│ ├── pages/
+│ └── services/
+│
+│── docs/
+│── README.md
+
+
+---
+
+## 🚀 Future Enhancements
+
+- Real MCP API integration with Swiggy Builders Club  
+- Voice-based interaction  
+- Personalized recommendation engine  
+- Multi-user collaborative ordering  
+- Mobile application  
+
+---
+
+## 🤝 Why This Project Matters
+
+This project represents a shift from:
+
+> “AI that suggests” → “AI that executes”
+
+It demonstrates how agentic systems can bridge the gap between user intent and real-world services.
+
+---
+
+## 📬 Contact
+
+**ANISH KARTHIC**  
+📧 anishkarthicvs@gmail.com  
+
+---
+
+## ⭐ Acknowledgement
+
+Inspired by the vision of agentic commerce and Swiggy's developer ecosystem.
+
+---
+
+## ⚖️ License
+
+MIT License  
