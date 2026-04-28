@@ -169,4 +169,41 @@ Inspired by the vision of agentic commerce and Swiggy's developer ecosystem.
 
 ## ⚖️ License
 
-MIT License  
+MIT License
+
+---
+
+## How to Run
+
+### 1. Backend
+
+First, you need to have Python and `pip` installed.
+
+1.  Navigate to the `backend` directory:
+    ```bash
+    cd backend
+    ```
+
+2.  Install the required packages:
+    ```bash
+    pip install fastapi "uvicorn[standard]"
+    ```
+
+3.  Run the FastAPI server:
+    ```bash
+    uvicorn main:app --reload
+    ```
+    The backend will be running at `http://127.0.0.1:8000`.
+
+### 2. Frontend
+
+1.  Open the `frontend/index.html` file in your web browser.
+
+2.  You can now interact with the Swiggy Smart Agent.
+
+## Example Inputs
+
+-   "Order pizza at 8 PM"
+-   "Buy milk and bread"
+-   "Book dinner for 2 tomorrow"
+-   "reorder last meal"
