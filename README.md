@@ -160,7 +160,7 @@ It demonstrates how agentic systems can bridge the gap between user intent and r
 📧 anishkarthicvs@gmail.com  
 
 ---
-
+**Trying to complete this is to get an offer from Swiggy u can also contribute**
 ## ⭐ Acknowledgement
 
 Inspired by the vision of agentic commerce and Swiggy's developer ecosystem.
