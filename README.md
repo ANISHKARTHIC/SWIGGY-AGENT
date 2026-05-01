@@ -77,11 +77,11 @@ Execution (Order / Booking / Purchase)
 
 ## 🔧 Tech Stack
 
-- **Backend:** Django / FastAPI  
-- **Frontend:** React / Streamlit (MVP)  
-- **AI Layer:** LLM-based agent (planned via AWS Bedrock)  
-- **Database:** SQLite / PostgreSQL  
-- **Deployment:** Vercel / Render  
+- **Backend:** FastAPI  
+- **Frontend:** HTML / CSS / JavaScript (MVP)  
+- **AI Layer:** Rule-based intent + agentic execution (LLM integration planned)  
+- **Storage:** JSON store for user profile + order memory  
+- **Deployment:** Local / container-ready  
 
 ---
 
@@ -116,19 +116,25 @@ The agent will use MCP tools to execute real-world actions.
 
 ## 📂 Project Structure
 
-swiggy-smart-agent/
+SWIGGY-AGENT/
 │── backend/
-│ ├── agent/
-│ ├── api/
-│ ├── models/
-│ └── utils/
+│   ├── main.py
+│   ├── requirements.txt
+│   └── agent/
+│       ├── __init__.py
+│       ├── config.py
+│       ├── intent.py
+│       ├── integrations.py
+│       ├── memory.py
+│       ├── models.py
+│       ├── orchestrator.py
+│       └── skills.py
 │
 │── frontend/
-│ ├── components/
-│ ├── pages/
-│ └── services/
+│   ├── app.js
+│   ├── index.html
+│   └── styles.css
 │
-│── docs/
 │── README.md
 
 
@@ -180,30 +186,41 @@ MIT License
 First, you need to have Python and `pip` installed.
 
 1.  Navigate to the `backend` directory:
-    ```bash
-    cd backend
-    ```
+  ```bash
+  cd backend
+  ```
 
 2.  Install the required packages:
-    ```bash
-    pip install fastapi "uvicorn[standard]"
-    ```
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 3.  Run the FastAPI server:
-    ```bash
-    uvicorn main:app --reload
-    ```
-    The backend will be running at `http://127.0.0.1:8000`.
+  ```bash
+  uvicorn main:app --reload
+  ```
+  The backend will be running at `http://127.0.0.1:8000`.
 
 ### 2. Frontend
 
-1.  Open the `frontend/index.html` file in your web browser.
+Option A: use the backend-served UI at `http://127.0.0.1:8000`.
 
-2.  You can now interact with the Swiggy Smart Agent.
+Option B: open `frontend/index.html` directly in your browser.
+
+### 3. Optional Environment Variables
+
+- `SWIGGY_MODE` (default: `mock`)
+- `SWIGGY_API_BASE_URL` (default: `https://www.swiggy.com`)
+- `DEFAULT_CITY`, `DEFAULT_ADDRESS`, `DEFAULT_RESTAURANT`
+- `DEFAULT_DINE_RESTAURANT`, `DEFAULT_DINE_TIME`, `DEFAULT_PARTY_SIZE`
+- `DEFAULT_BUDGET`, `DEFAULT_CUISINE`
 
 ## Example Inputs
 
 -   "Order pizza at 8 PM"
 -   "Buy milk and bread"
 -   "Book dinner for 2 tomorrow"
--   "reorder last meal"
+-   "Reorder last meal"
+-   "Track my order"
+-   "Cancel order #1234"
+-   "Apply coupon SAVE20"
