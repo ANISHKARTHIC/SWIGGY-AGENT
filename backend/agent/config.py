@@ -24,6 +24,7 @@ DEFAULT_PROFILE = {
     "default_address": DEFAULT_ADDRESS,
     "favorite_restaurant": DEFAULT_RESTAURANT,
     "favorite_items": DEFAULT_FOOD_ITEMS,
+    "favorite_cuisine": DEFAULT_CUISINE,
     "grocery_items": DEFAULT_GROCERY_ITEMS,
     "dine_restaurant": DEFAULT_DINE_RESTAURANT,
     "dine_time": DEFAULT_DINE_TIME,
