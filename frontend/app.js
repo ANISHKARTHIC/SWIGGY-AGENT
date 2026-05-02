@@ -1,6 +1,7 @@
 document.getElementById('submitBtn').addEventListener('click', async () => {
     const userInput = document.getElementById('userInput').value;
     const responseContainer = document.getElementById('response');
+    const baseUrl = window.location.origin === 'null' ? 'http://127.0.0.1:8000' : window.location.origin;
 
     if (!userInput) {
         responseContainer.textContent = 'Please enter a command.';
@@ -8,7 +9,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/agent', {
+        const response = await fetch(`${baseUrl}/agent`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -17,8 +18,11 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
         });
 
         const data = await response.json();
-        const formattedResponse = JSON.stringify(JSON.parse(data.response), null, 2);
-        responseContainer.textContent = formattedResponse;
+        if (!response.ok) {
+            responseContainer.textContent = JSON.stringify(data, null, 2);
+            return;
+        }
+        responseContainer.textContent = JSON.stringify(data, null, 2);
     } catch (error) {
         responseContainer.textContent = 'Error: Could not connect to the agent.';
         console.error('Error:', error);
