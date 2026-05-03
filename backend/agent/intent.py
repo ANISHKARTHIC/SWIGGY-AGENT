@@ -43,6 +43,7 @@ INTENT_PATTERNS = {
         r"\bsearch\b.*\brestaurant\b",
         r"\bnearby\b.*\brestaurant\b",
         r"\brestaurants? near\b",
+        r"\brestaurants? in\b",
         r"\bbest\b.*\brestaurant\b",
     ],
     "apply_offer": [
@@ -201,9 +202,11 @@ def extract_entities(user_input):
     elif re.search(r"\bdeliver|delivery\b", text):
         entities["delivery_mode"] = "delivery"
 
-    order_match = re.search(r"\b(?:order\s*id|order\s*#|#)\s*(\d{3,})\b", text)
+    order_match = re.search(
+        r"\b(?:order\s*id|order\s*#|#)\s*([a-z0-9-]{4,})\b", text
+    )
     if order_match:
-        entities["order_id"] = order_match.group(1)
+        entities["order_id"] = order_match.group(1).upper()
 
     offer_match = re.search(r"\b(?:code|coupon|offer)\s+([a-z0-9]{3,})\b", text)
     if offer_match:

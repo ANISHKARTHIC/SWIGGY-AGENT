@@ -12,6 +12,8 @@ class AgentRequest(BaseModel):
     user_id: str = Field(default=DEFAULT_USER_ID)
     auto_execute: bool = True
     channel: Optional[str] = "web"
+    location: Optional[str] = None
+    budget: Optional[int] = None
     metadata: Dict[str, Any] = Field(default_factory=dict)
 
 
