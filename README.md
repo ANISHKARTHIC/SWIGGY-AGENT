@@ -224,3 +224,5 @@ Option B: open `frontend/index.html` directly in your browser.
 -   "Track my order"
 -   "Cancel order #1234"
 -   "Apply coupon SAVE20"
+
+will do the agentic works 
